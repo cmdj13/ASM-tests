@@ -23,19 +23,23 @@ section .text
 
 _start:
 	mov edi, 0
+
 lp:
 	inc edi
 	add edi, 0x40
 	write edi
-	write 0xB
 	sub edi, 0x40
 	cmp edi, 26
-	jne lp
+	jne cnt
 	writeln 0
 
 	mov eax, sys_exit
 	mov ebx, no_error
 	int 80h
+
+cnt:
+	write 0xB
+	jmp lp
 
 WRITE:
 	mov eax, sys_write
