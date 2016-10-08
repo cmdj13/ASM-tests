@@ -28,3 +28,6 @@ all:
 	@rm *.o
 	@echo Done!
 	@echo
+
+clean:
+	rm -rf bin
